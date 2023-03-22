@@ -17,15 +17,15 @@ public class Steps {
 
 	}
 
-	@Given("ele ira escrever um usuario valido")
-	public void ele_ira_escrever_um_usuario_valido() {
+	@Given("ele ira escrever o usuario: standard_user")
+	public void ele_ira_escrever_o_usuario_standard_user() {
 		m.clicar(e.getCampoNome());
 		m.preencher(e.getCampoNome(), "standard_user");
 
 	}
 
-	@Given("ele ira colocar a senha")
-	public void ele_ira_colocar_a_senha() {
+	@Given("ele ira colocar a senha: secret_sauce")
+	public void ele_ira_colocar_a_senha_secret_sauce() {
 		m.clicar(e.getCampoSenha());
 		m.preencher(e.getCampoSenha(), "secret_sauce");
 
@@ -37,26 +37,26 @@ public class Steps {
 
 	}
 
-	@Given("selecionar o botão Add to cart do Sauce Labs Backpack")
-	public void selecionar_o_botão_add_to_cart_do_sauce_labs_backpack() {
+	@When("ele ira adicionar um item ao carrinho")
+	public void ele_ira_adicionar_um_item_ao_carrinho() {
 		m.clicar(e.getBtAddtocart());
 
 	}
 
-	@Given("tocar no carrinho")
-	public void tocar_no_carrinho() {
+	@When("ele ira tocar no icone do carrinho")
+	public void ele_ira_tocar_no_icone_do_carrinho() {
 		m.clicar(e.getBtCarrinho());
 
 	}
 
-	@Given("tocar no botão Chaeckout")
-	public void tocar_no_botão_chaeckout() {
+	@When("ira tocar no botão Chaeckout")
+	public void ira_tocar_no_botão_chaeckout() {
 		m.clicar(e.getBtCheckout());
 
 	}
 
-	@When("preencher o formulario de dados")
-	public void preencher_o_formulario_de_dados() {
+	@When("preencher o formulario de com dados validos")
+	public void preencher_o_formulario_de_com_dados_validos() {
 		m.clicar(e.getCampoPriNome());
 		m.preencher(e.getCampoPriNome(), "Luis");
 		m.clicar(e.getCampoSegNome());
@@ -85,12 +85,24 @@ public class Steps {
 	}
 
 	@Then("sera exibido o texto Thank you for your order!")
-	public void sera_exibido_o_texto_thank_you_for_your_order() 
-			throws InterruptedException {
+	public void sera_exibido_o_texto_thank_you_for_your_order() throws InterruptedException {
 		m.validarTexto(e.getValidarTxtFinal(), "Thank you for your order!");
-        m.pausa(5000);
-        m.fecharNavegador();
-        
+		m.pausa(5000);
+		m.fecharNavegador();
+
+	}
+
+	@Given("ele ira escrever o usuario: problem_user")
+	public void ele_ira_escrever_o_usuario_problem_user() {
+		m.clicar(e.getCampoNome());
+		m.preencher(e.getCampoNome(), "problem_user");
+
+	}
+
+	@When("ele nao vai adicionar um item ao carrinho")
+	public void ele_nao_vai_adicionar_um_item_ao_carrinho() {
+		m.clicar(e.getBtCarrinho());
+
 	}
 
 }
